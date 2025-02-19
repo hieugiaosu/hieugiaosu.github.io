@@ -1,6 +1,5 @@
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const links = [
@@ -10,6 +9,17 @@ const Navigation = () => {
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg border-b border-gray-200/10">
@@ -29,6 +39,7 @@ const Navigation = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleClick(e, link.href)}
                 className="text-sm hover:text-primary transition-colors duration-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
