@@ -1,7 +1,7 @@
 
-import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import Navigation from "@/components/Navigation";
+import { motion } from "framer-motion";
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <motion.h2 
@@ -79,6 +79,23 @@ const Index = () => {
                 <li>Published research papers on speech processing</li>
               </ul>
             </motion.div>
+
+            <motion.div 
+              className="glass-card p-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <h3 className="text-xl font-semibold">Full-stack Software Engineer Intern</h3>
+              <p className="text-primary/80">Medigo Software</p>
+              <p className="text-sm text-gray-400">May 2024 – August 2024</p>
+              <ul className="mt-4 space-y-2 list-disc list-inside text-gray-300">
+                <li>Implemented and maintained features for the internal business team to manage operations, including bug fixes and the addition of basic functionalities.</li>
+                <li>Served as the backend developer for the new doctor test appointment feature in the Medigo Doctor App. Responsible for identifying business problems and implementing backend solutions using cloud services such as AWS Serverless and ElasticSearch.</li>
+              </ul>
+              <p className="mt-4 text-gray-300">Technical skills: Typescript, Loopback4, ElasticSearch, DynamoDB</p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -99,12 +116,34 @@ const Index = () => {
               A solution for audio clue-based target speaker extraction (TSE) focusing on modeling mixture and reference speech. This approach addresses the challenge of transferring TSE models across different languages without requiring fine-tuning.
             </p>
             <a 
-              href="https://hieugiaosu.github.io/WHYV_demo/" 
+              href="https://anonymous.4open.science/w/WHYV/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block mt-4 text-primary hover:underline"
             >
               View Demo →
+            </a>
+          </motion.div>
+
+          <motion.div 
+            className="glass-card p-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-xl font-semibold">Reinforcement Learning Algorithms For Navigating Multiagent In Auto Storage System</h3>
+            <p className="text-primary/80">Hieu The Pham; Thang Quoc Nguyen; Thai-Minh Truong; Thanh-Binh Tran; Thinh Ba Vuong | ICIIT2024</p>
+            <p className="mt-4 text-gray-300">
+            Developed advanced solutions for navigating multiple agents in a warehouse environment using reinforcement learning techniques. Focused on optimizing operational efficiency and minimizing system errors. Implemented the simulation using Python and PyTorch to ensure robust and scalable performance.
+            </p>
+            <a 
+              href="https://dl.acm.org/doi/10.1145/3654522.3654583" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-4 text-primary hover:underline"
+            >
+              View Paper →
             </a>
           </motion.div>
         </div>
