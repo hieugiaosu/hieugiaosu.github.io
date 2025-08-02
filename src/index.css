@@ -38,3 +38,10 @@
 .glass-card {
   @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg shadow-lg;
 }
+
+.navbar-contrast {
+  @apply bg-background/90 backdrop-blur-lg border-b-2 border-primary/20 shadow-lg;
+  background: linear-gradient(180deg, 
+    hsl(var(--background)) 0%, 
+    hsl(var(--background) / 0.95) 100%);
+}
