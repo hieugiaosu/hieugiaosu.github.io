@@ -1,0 +1,33 @@
+# Experience List
+experiences:
+  - title: "Associate AI Engineer"
+    company: "ZaloAI (Zalo Group)"
+    period: "June 2025 – Present"
+    responsibilities:
+      - Maintain ASR system for Vietnamese in ZingMP3 and Kiki Auto.
+      - Develop and maintain Speech AI services for Kiki product.
+
+  - title: "Student Researcher"
+    company: "Advance Intelligence Technology Lab (HCMUT-VNU)"
+    period: "May 2023 – Present"
+    responsibilities:
+      - "Research on speech processing and sound source separation"
+      - "Collaboration with KAIST researchers"
+      - "Published research papers on speech processing"
+
+  - title: "AI/Software Engineer"
+    company: "Rennlabs (Venture Studio of Renn Global)"
+    period: "August 2024 – May 2025"
+    responsibilities:
+      - "AI Data Pipeline Development using MageAI"
+      - "LLM Integration for Marketing Product Content Management"
+      - "Backend Development for AI Services using NestJS"
+      - "Data enrichment service implementation"
+    
+  - title: "Full-stack Software Engineer Intern"
+    company: "Medigo Software"
+    period: "May 2024 – August 2024"
+    responsibilities:
+      - "Implemented and maintained features for the internal business team to manage operations, including bug fixes and the addition of basic functionalities."
+      - "Served as the backend developer for the new doctor test appointment feature in the Medigo Doctor App. Responsible for identifying business problems and implementing backend solutions using cloud services such as AWS Serverless and ElasticSearch."
+    technical_skills: "Typescript, Loopback4, ElasticSearch, DynamoDB"

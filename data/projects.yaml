@@ -1,0 +1,13 @@
+# Projects
+projects:
+  - title: "Target Speaker Extraction"
+    organization: "AI TECH LAB"
+    description: "A solution for audio clue-based target speaker extraction (TSE) focusing on modeling mixture and reference speech."
+    project_url: "https://hieugiaosu.github.io/WHYV_demo/"
+    link_text: "View Project"
+    
+  - title: "Meeting Transcription Website"
+    organization: "Self Project"
+    description: "An automated solution for transcribing meetings, detecting human speech, and identifying speakers using Whisper model and custom speaker embedding."
+    project_url: "https://github.com/hieugiaosu/meeting_transcript"
+    link_text: "View Repository"

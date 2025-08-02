@@ -1,0 +1,15 @@
+# Research Papers
+research:
+  - title: "Wanna Hear Your Voice"
+    authors: "First Author"
+    status: "Preprint"
+    description: "A solution for audio clue-based target speaker extraction (TSE) focusing on modeling mixture and reference speech. This approach addresses the challenge of transferring TSE models across different languages without requiring fine-tuning."
+    demo_url: "https://anonymous.4open.science/w/WHYV/"
+    demo_text: "View Demo"
+    
+  - title: "Reinforcement Learning Algorithms For Navigating Multiagent In Auto Storage System"
+    authors: "Hieu The Pham; Thang Quoc Nguyen; Thai-Minh Truong; Thanh-Binh Tran; Thinh Ba Vuong"
+    status: "ICIIT2024"
+    description: "Developed advanced solutions for navigating multiple agents in a warehouse environment using reinforcement learning techniques. Focused on optimizing operational efficiency and minimizing system errors. Implemented the simulation using Python and PyTorch to ensure robust and scalable performance."
+    paper_url: "https://dl.acm.org/doi/10.1145/3654522.3654583"
+    paper_text: "View Paper"

@@ -1,5 +1,7 @@
+import { loadPersonalInfo, PersonalInfo } from "@/lib/dataLoader";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaOrcid } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaEnvelope, FaGithub, FaGraduationCap, FaLinkedin, FaOrcid } from "react-icons/fa";
 
 const Waveform = () => {
   return (
@@ -34,6 +36,20 @@ const ContactButton = ({ href, icon: Icon }) => (
 );
 
 const Hero = () => {
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
+
+  useEffect(() => {
+    loadPersonalInfo().then(setPersonalInfo);
+  }, []);
+
+  if (!personalInfo) {
+    return (
+      <section className="min-h-screen flex items-center justify-center">
+        <div className="text-center">Loading...</div>
+      </section>
+    );
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -48,7 +64,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            AI Engineer & Researcher
+            {personalInfo.title}
           </motion.h2>
 
           <motion.h1
@@ -57,12 +73,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Phạm Thế Hiểu
+            {personalInfo.name}
           </motion.h1>
 
           <motion.img
-            src="/thehieupham.jpg"
-            alt="Phạm Thế Hiểu"
+            src={personalInfo.avatar}
+            alt={personalInfo.name}
             className="w-32 h-32 rounded-full mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,9 +91,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              AI/Software Engineer at Rennlabs | Researcher at AITech Lab 
+              {personalInfo.subtitle}
               <br />
-              Specializing in NLP & Speech Processing
+              {personalInfo.description}
             </p>
           </motion.div>
           
@@ -89,10 +105,13 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <ContactButton href="mailto:hieu.pham14022003@gmail.com" icon={FaEnvelope} />
-            <ContactButton href="https://github.com/hieugiaosu" icon={FaGithub} />
-            <ContactButton href="https://www.linkedin.com/in/thehieu1402" icon={FaLinkedin} />
-            <ContactButton href="https://orcid.org/0009-0001-4398-7285" icon={FaOrcid} />
+            <ContactButton href={`mailto:${personalInfo.contact.email}`} icon={FaEnvelope} />
+            <ContactButton href={personalInfo.contact.github} icon={FaGithub} />
+            <ContactButton href={personalInfo.contact.linkedin} icon={FaLinkedin} />
+            <ContactButton href={personalInfo.contact.orcid} icon={FaOrcid} />
+            {personalInfo.contact.googleScholar && (
+              <ContactButton href={personalInfo.contact.googleScholar} icon={FaGraduationCap}/>  
+            )}
           </motion.div>
 
           <motion.div

@@ -1,14 +1,14 @@
 
+import { loadPersonalInfo, PersonalInfo } from "@/lib/dataLoader";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
-  const links = [
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Research", href: "#research" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
+
+  useEffect(() => {
+    loadPersonalInfo().then(setPersonalInfo);
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -21,6 +21,10 @@ const Navigation = () => {
     }
   };
 
+  if (!personalInfo) {
+    return null;
+  }
+
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg border-b border-gray-200/10">
       <div className="container mx-auto px-6 py-4">
@@ -32,10 +36,10 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Phạm Thế Hiểu
+            {personalInfo.name}
           </motion.a>
           <div className="hidden md:flex space-x-8">
-            {links.map((link, index) => (
+            {personalInfo.navigation.map((link, index) => (
               <motion.a
                 key={link.name}
                 href={link.href}

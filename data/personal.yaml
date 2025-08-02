@@ -1,0 +1,27 @@
+# Personal Information
+name: "Phạm Thế Hiểu"
+title: "AI Engineer & Researcher"
+subtitle: "Associate AI Engineer at ZaloAI | Researcher at AITech Lab"
+description: "Specializing in NLP & Speech Processing"
+avatar: "/thehieupham.jpg"
+
+# Contact Information
+contact:
+  email: "hieu.pham14022003@gmail.com"
+  github: "https://github.com/hieugiaosu"
+  linkedin: "https://www.linkedin.com/in/thehieu1402"
+  orcid: "https://orcid.org/0009-0001-4398-7285"
+  googleScholar: "https://scholar.google.com/citations?user=-fiO9DAAAAAJ&hl=vi"
+
+# Navigation Menu
+navigation:
+  - name: "About"
+    href: "#about"
+  - name: "Experience"
+    href: "#experience"
+  - name: "Research"
+    href: "#research"
+  - name: "Projects"
+    href: "#projects"
+  - name: "Contact"
+    href: "#contact"
